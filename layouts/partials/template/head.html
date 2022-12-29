@@ -8,6 +8,7 @@
 	{{ partial "template/favicon" }}
 	{{ end }}
 	<!-- CSS -->
+	<link href="{{ .Site.BaseURL }}/css/style.css" rel="stylesheet" />
 	{{ if .Site.IsServer }}
 	{{ $style := resources.Get "sass/main.scss" | resources.ExecuteAsTemplate "scss/main.scss" . | toCSS (dict "targetPath" "assets/css/main.css" "outputStyle" "compressed" "enableSourceMap" false) }}
 	<link rel="stylesheet" href="{{ ($style).RelPermalink }}">
